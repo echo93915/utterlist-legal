@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opening UtterList&hellip;</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; display: flex; flex-direction: column;
+           align-items: center; justify-content: center; height: 100vh; margin: 0;
+           background: #000; color: #fff; }
+    p { color: #8E8E93; font-size: 15px; margin-top: 12px; }
+    a { color: #0A84FF; text-decoration: none; font-size: 15px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <p>Opening UtterList&hellip;</p>
+  <a id="store-link" href="https://apps.apple.com/app/id6761233929">Get UtterList on the App Store</a>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var listId = params.get("listId");
+    var storeUrl = "https://apps.apple.com/app/id6761233929";
+
+    if (listId) {
+      window.location.href = "utterlist://list/" + encodeURIComponent(listId);
+    }
+
+    setTimeout(function() {
+      window.location.href = storeUrl;
+    }, 1500);
+  </script>
+</body>
+</html>
